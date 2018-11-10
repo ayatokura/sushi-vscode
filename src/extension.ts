@@ -1,13 +1,13 @@
 'use strict';
 import * as vscode from 'vscode';
-import { Sushier } from './🍣erToolBarItem';
+import { Avocadoer } from './🥑erToolBarItem';
 
-let sushier: Sushier;
+let avocadoer: Avocadoer;
 
-function getSushi(context: vscode.ExtensionContext) : Sushier {
-    if (!sushier)
-        sushier = new Sushier(context, vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 1000), 'extension.needMoreSushi');
-    return sushier;
+function getAvocado(context: vscode.ExtensionContext) : Avocadoer {
+    if (!avocadoer)
+        avocadoer = new Avocadoer(context, vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 1000), 'extension.needMoreAvocado');
+    return avocadoer;
 }
 
 export function activate(context: vscode.ExtensionContext) {
@@ -18,12 +18,12 @@ export function activate(context: vscode.ExtensionContext) {
     }
     let commands: Commands[] = [
         {
-            id: 'extension.sushiOnStatusBar',
-            command: () => getSushi(context)
+            id: 'extension.avocadoOnStatusBar',
+            command: () => getAvocado(context)
         },
         {
-            id: 'extension.needMoreSushi',
-            command: () => getSushi(context).needMoreSushi()
+            id: 'extension.needMoreAvocado',
+            command: () => getAvocado(context).needMoreAvocado()
         }
     ];
 
@@ -33,8 +33,8 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 export function deactivate() {
-    if (sushier) {
-        sushier.dispose();
-        sushier = null;
+    if (avocadoer) {
+        avocadoer.dispose();
+        avocadoer = null;
     }
 }

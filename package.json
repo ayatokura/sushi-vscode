@@ -1,7 +1,7 @@
 {
-  "name": "sushi-vscode",
-  "displayName": "sushi-vscode",
-  "description": "May the Sushi be with you.",
+  "name": "avocado-vscode",
+  "displayName": "avocado-vscode",
+  "description": "May the Avocado be with you.",
   "version": "0.0.3",
   "publisher": "espresso3389",
   "engines": {
@@ -11,31 +11,31 @@
     "Other"
   ],
   "keywords": [
-    "Sushi"
+    "Avocado"
   ],
-  "icon": "sushi.png",
+  "icon": "avocado.png",
   "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
-    "url": "https://github.com/espresso3389/sushi-vscode/issues"
+    "url": "https://github.com/espresso3389/avocado-vscode/issues"
   },
-  "homepage": "https://github.com/espresso3389/sushi-vscode",
+  "homepage": "https://github.com/espresso3389/avocado-vscode",
   "repository": {
     "type": "git",
-    "url": "https://github.com/espresso3389/sushi-vscode.git"
+    "url": "https://github.com/espresso3389/avocado-vscode.git"
   },
   "activationEvents": [
-    "onCommand:extension.sushiOnStatusBar"
+    "onCommand:extension.avocadoOnStatusBar"
   ],
   "main": "./out/src/extension",
   "contributes": {
     "commands": [
       {
-        "command": "extension.sushiOnStatusBar",
-        "title": "It's Sushi Time!"
+        "command": "extension.avocadoOnStatusBar",
+        "title": "It's Avocado Time!"
       },
       {
-        "command": "extension.needMoreSushi",
-        "title": "Need more Sushi!"
+        "command": "extension.needMoreAvocado",
+        "title": "Need more Avocado!"
       }
     ]
   },

@@ -3,17 +3,17 @@ let openurl = require('openurl');
 
 const Interval = 250;
 
-export class Sushier extends vscode.Disposable
+export class Avocadoer extends vscode.Disposable
 {
     statusBarItem: vscode.StatusBarItem;
     timer: NodeJS.Timer;
     enableSpecial = true;
-    isSushiMode = true;
+    isAvocadoMode = true;
 
-    // [12] stands for the first sushi and [34] does the second one.
+    // [12] stands for the first avocado and [34] does the second one.
     // This logic is very important to deal with variable length emoji character
     // sequence.
-    sushiBelt: string = '1234      '.repeat(3);
+    avocadoBelt: string = '1234      '.repeat(3);
 
     constructor(context: vscode.ExtensionContext, statusBarItem: vscode.StatusBarItem, command: string)
     {
@@ -21,9 +21,9 @@ export class Sushier extends vscode.Disposable
         this.statusBarItem = statusBarItem;
 
         this.timer = setInterval(() => {
-            let glyphs = ['🍣', '🍣'];
-            let tooltip = 'Wow, what a wonderful Sushi time!';
-            this.isSushiMode = true;
+            let glyphs = ['🥑', '🥑'];
+            let tooltip = 'Wow, what a wonderful Avocado time!';
+            this.isAvocadoMode = true;
 
             if (this.enableSpecial) {
                 let date = new Date();
@@ -33,31 +33,31 @@ export class Sushier extends vscode.Disposable
                     // Wow, it's Meat day
                     glyphs = ['🍖', '🍖'];
                     tooltip = 'Good Meat day!';
-                    this.isSushiMode = false;
+                    this.isAvocadoMode = false;
                 } else if (m == 12 && d == 25) {
                     glyphs = ['🎅', '🎄'];
                     tooltip = 'Merry Christmas!';
-                    this.isSushiMode = false;
+                    this.isAvocadoMode = false;
                 }
             }
 
             // scroll; so weird logic to stabilize the pixel size of the string
-            let sushiBelt = this.sushiBelt.slice(1) + this.sushiBelt.slice(0, 2);
-            this.sushiBelt = sushiBelt.slice(0, -1);
+            let avocadoBelt = this.avocadoBelt.slice(1) + this.avocadoBelt.slice(0, 2);
+            this.avocadoBelt = avocadoBelt.slice(0, -1);
             // If you don't understand what the code does, comment out the next single line:
-            sushiBelt = sushiBelt.replace(/12/g, glyphs[0]).replace(/34/g, glyphs[1]).replace(/[1234]/g, ' ');
-            this.statusBarItem.text = '[' + sushiBelt + ']';
+            avocadoBelt = avocadoBelt.replace(/12/g, glyphs[0]).replace(/34/g, glyphs[1]).replace(/[1234]/g, ' ');
+            this.statusBarItem.text = '[' + avocadoBelt + ']';
             this.statusBarItem.show();
             this.statusBarItem.command = command;
             this.statusBarItem.tooltip = tooltip;
         }, Interval);
     }
 
-    public needMoreSushi() : void {
-        // The user does not need anything but 🍣!
+    public needMoreAvocado() : void {
+        // The user does not need anything but 🥑!
         this.enableSpecial = !this.enableSpecial;
-        if (this.isSushiMode)
-            openurl.open('https://www.google.co.jp/maps/search/sushi');
+        if (this.isAvocadoMode)
+            openurl.open('https://www.google.co.jp/maps/search/avocado');
     }
 
     private close() : void {

@@ -1,16 +1,16 @@
-# sushi-vscode 🍣
+# avocado-vscode 🥑
 
-May the Sushi be with you.
+May the Avocado be with you.
 
 ## Instruction(s)
 
-Just type `sushi` on your command palette.
+Just type `avocado` on your command palette.
 
-![](https://raw.githubusercontent.com/espresso3389/sushi-vscode/master/images/intro.gif)
+![](https://raw.githubusercontent.com/espresso3389/avocado-vscode/master/images/intro.gif)
 
 ## Update (2016-12-15)
 
-Ladies and gentlemen, now you can enjoy _colorful_ sushi 🍣 on your Visual Studio Code regardless of your version; either stable or insiders!
+Ladies and gentlemen, now you can enjoy _colorful_ avocado 🥑 on your Visual Studio Code regardless of your version; either stable or insiders!
 
 ## Known Issue(s)
 
@@ -19,7 +19,7 @@ Ladies and gentlemen, now you can enjoy _colorful_ sushi 🍣 on your Visual Stu
 Who cares? 😑
 
 ## GitHub URL
-https://github.com/espresso3389/sushi-vscode
+https://github.com/espresso3389/avocado-vscode
 
 ## Marketplace URL
-https://marketplace.visualstudio.com/items?itemName=espresso3389.sushi-vscode
+https://marketplace.visualstudio.com/items?itemName=espresso3389.avocado-vscode
